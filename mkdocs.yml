@@ -1,0 +1,13 @@
+site_name: Rover Software
+theme:
+  name: material
+nav:
+  - Software: index.md
+  - Features: features.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+
+  
