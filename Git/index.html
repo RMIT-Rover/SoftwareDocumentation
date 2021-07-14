@@ -9,19 +9,19 @@
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
     
     
       
-        <title>Rover Software</title>
+        <title>Git Setup - Rover Software</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.33e2939f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.33e2939f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
       
     
@@ -51,7 +51,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -65,7 +65,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Rover Software" class="md-header__button md-logo" aria-label="Rover Software" data-md-component="logo">
+    <a href=".." title="Rover Software" class="md-header__button md-logo" aria-label="Rover Software" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -84,7 +84,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Software
+              Git Setup
             
           </span>
         </div>
@@ -145,7 +145,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Rover Software" class="md-nav__button md-logo" aria-label="Rover Software" data-md-component="logo">
+    <a href=".." title="Rover Software" class="md-nav__button md-logo" aria-label="Rover Software" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -162,18 +162,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         Software
       </a>
-      
     </li>
   
 
@@ -186,7 +179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ROS%20Setup/" class="md-nav__link">
+      <a href="../ROS%20Setup/" class="md-nav__link">
         ROS Setup
       </a>
     </li>
@@ -199,11 +192,18 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="Git/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Git Setup
       </a>
+      
     </li>
   
 
@@ -221,38 +221,34 @@
               
                 
                 
-                <h1 id="rover-iteration-2-software">Rover Iteration 2: Software</h1>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Description</th>
-<th>Dependancies</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Teleoperation Package</td>
-<td>Develop a ROS package capable of moving the rover given controller/keyboard commands. Deliverables include: <br><ul><li>Send Controller Information via Ros Messages</li><li>Develop Drive Interface - Controller to Wheel Commands</li><li>Simulate Moving Rover</li><li>Test Final Package</li></ul></td>
-<td><ul><li> Drive Systems: The Drive Interface must be completed before final test</li> <li>Command - We need to test sending controller msgs over command through ros</li></ul></td>
-</tr>
-<tr>
-<td>Sensor Integration</td>
-<td>Develop and improve current sensor readouts. All sensor information must be sent over ROS messaging system, simulatable in Gazebo and visible via Rviz. <br>Deliverables include: <br> <ul><li>Camera Sensor - Send multiple camera streams over ros</li><li>Drive Sensor - Develop PID controller to retrieve odometry</li><li>IMU Sensor - Test Odometry fusion with Drive Sensor</li><li>Lidar - Develop lidar package capable of mapping and improving localisation</li><li>Realsense: Analyse and Develop a Solution that improves live mapping, navigation and odometry</li></ul></td>
-<td>Drive Systems/Arm Systems: we require input from these teams in order to properly develop a PID controller package and retrieve correct odometry</td>
-</tr>
-<tr>
-<td>Autonomy</td>
-<td>Analyse and Develop autonomous navigation systems and build upon sensor details. This must all be simulateable on Gazebo. Deliverables include: <br><ul><li>Detect a variety of AR Tags and use this information for localisation</li><li>Navigate against a coordinate grid: EKF</li><li>Analysis of live navigation techniques to reduce need for detailed maps or SLAM before navigation</li></ul></td>
-<td>Require use of the Jetson for live testing.</td>
-</tr>
-<tr>
-<td>Quality of Life</td>
-<td>Improve Command UI with debug and sensor modes, Include Arm in Teleoperation Package to allow for a more integrated and testable system (Gazebo simulation)</td>
-<td>Dependancies on Command and arm for testing purposes</td>
-</tr>
-</tbody>
-</table>
+                <h1 id="git-setup">Git Setup</h1>
+<p>The Rover team has a Git Organisation which you must request access to via the current Software Leader/Architect. You can use a Student or Personal Git account.</p>
+<h2 id="setting-up-ssh">Setting Up SSH</h2>
+<p>This tutorial is more indepth and will be kept up to date more <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">here</a></p>
+<p>Login to Git and navigate to your <a href="https://github.com/settings/keys">key list</a>.</p>
+<p>If you are using WSL2 Ubuntu 18.04
+<div class="highlight"><pre><span></span><code>sudo vim /etc/wsl.conf
+</code></pre></div>
+Copy and paste the following into the editor, Save and Exit.</p>
+<div class="highlight"><pre><span></span><code>[automount]
+options = &quot;metadata&quot;
+</code></pre></div>
+<p>Close all WSL terminals and run in powershell
+<div class="highlight"><pre><span></span><code>wsl --shutdown
+</code></pre></div></p>
+<p>In ubuntu 18.04</p>
+<div class="highlight"><pre><span></span><code>ssh-keygen -t ed25519 -C &quot;s1234567@student.rmit.edu.au&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git config --global user.name &quot;s1234567&quot;
+git config --global user.email &quot;s1234567@student.rmit.edu.au&quot;
+</code></pre></div>
+<p>Copy and Paste the result from this command into a <code>New SSH Key</code> on Github.
+<div class="highlight"><pre><span></span><code>cat ~/.ssh/id_ed25519.pub
+</code></pre></div></p>
+<p>In your ROVER_WS. <a href="../ROS%20Setup/">Set this up in Environment</a></p>
+<p>Clone this repo to test.
+<div class="highlight"><pre><span></span><code>git clone git@github.com:RMIT-Rover/rmit_rover_description.git
+</code></pre></div></p>
                 
               
               
@@ -271,20 +267,20 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-      
-        <a href="ROS%20Setup/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../ROS%20Setup/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Next
+                Previous
               </span>
               ROS Setup
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   
@@ -307,10 +303,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.d892486b.min.js"></script>
+      <script src="../assets/javascripts/bundle.d892486b.min.js"></script>
       
     
   </body>

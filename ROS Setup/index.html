@@ -14,7 +14,7 @@
     
     
       
-        <title>Features - Rover Software</title>
+        <title>ROS Setup - Rover Software</title>
       
     
     
@@ -58,11 +58,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#rover-iteration-2-features" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -89,7 +84,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Features
+              ROS Setup
             
           </span>
         </div>
@@ -189,56 +184,26 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Features
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Features
+        ROS Setup
       </a>
       
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    </li>
   
-  
+
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
-        <li class="md-nav__item">
-  <a href="#controller" class="md-nav__link">
-    Controller
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#autonomous" class="md-nav__link">
-    Autonomous
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#jetson-and-code-cleanliness" class="md-nav__link">
-    Jetson and Code Cleanliness
-  </a>
+
   
-</li>
-      
-    </ul>
   
-</nav>
-      
+  
+    <li class="md-nav__item">
+      <a href="../Git/" class="md-nav__link">
+        Git Setup
+      </a>
     </li>
   
 
@@ -250,94 +215,84 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#controller" class="md-nav__link">
-    Controller
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#autonomous" class="md-nav__link">
-    Autonomous
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetson-and-code-cleanliness" class="md-nav__link">
-    Jetson and Code Cleanliness
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                <h1 id="rover-iteration-2-features">Rover Iteration 2 Features</h1>
-<h2 id="controller">Controller</h2>
-<p>Covers everything outside of autonomous control.</p>
-<div class="admonition canbus-layer">
-<p class="admonition-title">Canbus-layer</p>
-<p>Create an abstract Layer to improve canbus messaging between systems and modularity as well as documentation as code for handover purposes.</p>
+                <h1 id="local-ros-setup">Local ROS Setup</h1>
+<p>The Rover is built with ROS Melodic on Ubuntu-18.04 LTS. If you have an install of Ubuntu-18.04 as your boot OS or virtual machine please skip to Step 2.</p>
+<h2 id="windows-setup">Windows Setup</h2>
+<p>ROS is strictly on linux, and to keep the rover from having strange dependancy issues we recommend using the same OS version for development as production, which in &gt; this case is Ubuntu 18.04. Below are instructions on using WSL, other ways to install Ubuntu and ROS include setting up dual booting, using a liveusb or using a &gt; virtual machine. I have found that Live USB is generally underperformant especially for use in simulations, Dual Booting works but you may run into issues if you do not have enough hard drive space and a virtual machine can sometimes run in to performance issues.</p>
+<p>Although WSL is not the greatest solution available, it is natively supported by the Windows team and does not require a new install of Linux to run.</p>
+<h3 id="enable-wsl2-on-windows">Enable WSL2 on Windows</h3>
+<p>WSL2 requires the latest build of Windows 10 to be installed. If you dont have the correct requirements you may have to develop on the Rover itself or in a Virtual Machine / Dual boot system.</p>
+<p>This below tutorial should stay up to date. </p>
+<p>https://docs.microsoft.com/en-us/windows/wsl/install-win10</p>
+<p>As Above: </p>
+<ul>
+<li>Enable the Windows Subsystem for Linux</li>
+<li>Check requirements for running WSL 2</li>
+<li>Enable Virtual Machine feature</li>
+<li>Download the Linux kernel update package</li>
+<li>Set WSL 2 as your default version</li>
+<li>install ubuntu 18.04 terminal https://www.microsoft.com/store/apps/9N9TNGVNDL3Q</li>
+<li>I recommend Installing Windows Terminal from the Microsoft Store as well.</li>
+</ul>
+<p>You can check the install worked properly by opening powershell and entering
+<div class="highlight"><pre><span></span><code>wsl --list --verbose
+</code></pre></div></p>
+<div class="admonition info inline end">
+<p class="admonition-title">Info</p>
+<p>Notice how Ubuntu 18.04 is version 2</p>
 </div>
-<div class="admonition command-gui">
-<p class="admonition-title">Command-gui</p>
-<p>Improved command GUI with integrated sensory information, arm and drive control capabilities and autonomous controls. Debug and console values should also be sent here.</p>
-</div>
-<div class="admonition pid-interface">
-<p class="admonition-title">Pid-interface</p>
-<p>Help with the construction of a PID interface that all motors can use, help with integration to interface with arm and drive motor controllers.</p>
-</div>
-<h2 id="autonomous">Autonomous</h2>
-<div class="admonition odometry-localisation-and-navigation">
-<p class="admonition-title">Odometry-localisation-and-navigation</p>
-<p>Fuse all Odometry information and perform ekf localisation and navigation. Localise against a coordinate grid.</p>
-</div>
-<div class="admonition landmark-localisation">
-<p class="admonition-title">Landmark-localisation</p>
-<p>Perform AR Tag Detection on Realsense to determine distance. Localise against a coordinate grid, account for error in Odometry information.</p>
-</div>
-<div class="admonition obstacle-detection-and-avoidance">
-<p class="admonition-title">Obstacle-detection-and-avoidance</p>
-<p>Use LIDAR and Depth Camera to detect and avoid obstacles</p>
-</div>
-<div class="admonition slope-detection">
-<p class="admonition-title">Slope-detection</p>
-<p>Use Odom and Realsense to determine slopes the rover can attempt to climb.</p>
-</div>
-<h2 id="jetson-and-code-cleanliness">Jetson and Code Cleanliness</h2>
-<div class="admonition build-and-deploy-objects">
-<p class="admonition-title">Build-and-deploy-objects</p>
-<p>On Git push, code will be tested and deployed to the jetson via jenkins jobs. This would allow us to minify and optimise builds as well as keep hard drive size minimal. Would require: AWS Cloud services and JFrog Artifactory.</p>
-</div>
+<p><img alt="wsl_check" src="../static/wsl_check.PNG" /></p>
+<h4 id="setup-x-server-connection">Setup X server connection</h4>
+<p>Download <a href="https://sourceforge.net/projects/vcxsrv/files/latest/download">vcxsrv</a> on Windows</p>
+<p>Launch XLaunch via the Start Menu.</p>
+<p>Launch with default params, except for <code>Additional Parameters-&gt;No Access Control</code>, which should be checked.</p>
+<p>Install x11-apps on ubuntu 18.04
+<div class="highlight"><pre><span></span><code>sudo apt install x11-apps
+</code></pre></div></p>
+<p>Copy and Paste these commands</p>
+<div class="highlight"><pre><span></span><code>echo &#39;export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk &#39;\&#39;&#39;{print $2}&#39;\&#39;&#39;):0&#39; &gt;&gt; ~/.bashrc
+echo &quot;export LIBGL_ALWAYS_INDIRECT=1&quot; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+echo &quot;source ~/.bashrc&quot; &gt;&gt; ~/.bash_profile
+</code></pre></div>
+<p>Run xeyes to test if your window opens correctly</p>
+<div class="highlight"><pre><span></span><code>xeyes
+</code></pre></div>
+<h3 id="install-ros-melodic">Install ROS Melodic</h3>
+<p>Full tutorial <a href="http://wiki.ros.org/melodic/Installation">here</a></p>
+<p>In your ubuntu 18.04 terminal copy and paste these commands.</p>
+<p><div class="highlight"><pre><span></span><code>sudo sh -c &#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo apt install curl
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo apt update
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo apt install ros-melodic-desktop-full
+</code></pre></div></p>
+<p>This will take a few minutes.</p>
+<h3 id="setting-up-environment">Setting up environment</h3>
+<div class="highlight"><pre><span></span><code>echo &#39;export ROS_VER=melodic&#39; &gt;&gt; ~/.bashrc
+echo &#39;source /opt/ros/$ROS_VER/setup.bash&#39; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo apt-get install python-catkin-tools
+</code></pre></div>
+<p>Create a new directory for your ROS workspace and change to this directory in Ubuntu using <code>cd path/to/dir</code>. If you are using WSL <code>/mnt/c/Users/user_name/Documents/</code> will take you to the Documents directory, <code>c</code> refers to your hard drive, unlike in Windows this must be lowercase, while typing up the path you can double click <code>tab</code> to view the contents of the path.</p>
+<div class="highlight"><pre><span></span><code>mkdir -p catkin_ws/src
+cd catkin_ws
+catkin init
+cd src
+echo &quot;export ROVER_WS=$(pwd)&quot; &gt;&gt; ~/.bashrc
+echo &#39;alias setup=&#39;\&#39;&#39;source $ROVER_WS/../devel/setup.bash&#39;\&#39; &gt;&gt; ~/.bashrc
+</code></pre></div>
                 
               
               
@@ -370,6 +325,20 @@
           </div>
         </a>
       
+      
+        <a href="../Git/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Git Setup
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
