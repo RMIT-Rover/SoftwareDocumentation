@@ -108,7 +108,5 @@ cd catkin_ws
 catkin init
 cd src
 echo "export ROVER_WS=$(pwd)" >> ~/.bashrc
-echo 'alias setup=$ROVER_WS/../devel/setup.bash' >> ~/.bashrc
+echo 'alias setup='\''source $ROVER_WS/../devel/setup.bash'\' >> ~/.bashrc
 ```
-
-

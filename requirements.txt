@@ -1,5 +1,6 @@
 click==7.1.2
 future==0.18.2
+ghp-import==2.0.1
 Jinja2==2.11.3
 joblib==1.0.1
 livereload==2.6.3
@@ -12,6 +13,7 @@ mkdocs-material-extensions==1.0.1
 nltk==3.5
 Pygments==2.8.1
 pymdown-extensions==8.1.1
+python-dateutil==2.8.2
 PyYAML==5.4.1
 regex==2021.3.17
 six==1.15.0
