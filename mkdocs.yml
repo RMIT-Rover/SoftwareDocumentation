@@ -3,11 +3,12 @@ theme:
   name: material
 nav:
   - Software: index.md
-  - Features: features.md
+  - ROS Setup: ROS Setup.md
+  - Git Setup: Git.md
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-
-
+  - toc:
+      toc_depth: 0
   
